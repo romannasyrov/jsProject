@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact List</title>
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -12,10 +13,10 @@
         <h1 class="header-title">Contact List on JS</h1>
         <a class="repository-link"href="https://github.com/romannasyrov" target="_blank">GitHub Repository link</a>
         <div class="inputs">
-            <input type="text" class="" placeholder="Name">
-            <input type="text" class="" placeholder="Vacancy">
-            <input type="text" class="" placeholder="Phone +X XXX XXX XX XX">
-            <input type="submit" class="" value="ADD">
+            <input type="text" class="inputs__item inputs__name js-name-input" placeholder="Name">
+            <input type="text" class="inputs__item inputs__vacancy js-vacancy-input" placeholder="Vacancy">
+            <input type="text" class="inputs__item inputs__phone js-phone-input" placeholder="Phone +X XXX XXX XX XX">
+            <input type="submit" class="inputs__item inputs__submit js-submit-btn" value="ADD">
             <input type="submit" class="" value="Clear list">
             <input type="submit" class="" value="Search">
         </div>
