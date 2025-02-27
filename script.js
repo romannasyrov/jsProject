@@ -1,29 +1,7 @@
-// нужны 2 функции проверки текстового инпута и числового
-window.onload = function () {
-    document.querySelector('.js-submit-btn').addEventListener('click', () => {
-        let contact = new Object();
-        let nameInput = document.querySelector('.js-name-input');
-        let vacancyInput = document.querySelector('.js-vacancy-input');
-        let phoneInput = document.querySelector('.js-phone-input');
+'use strict'
 
-        let correctFirstInput = checkInput(nameInput);
-        let correctSecondInput = checkInput(vacancyInput);
-        let correctThirdInput = checkInput(phoneInput);
-        if (correctFirstInput && correctSecondInput && correctThirdInput) {
-            contact.name = nameInput.value.trim();
-            contact.vacancy = vacancyInput.value.trim();
-            contact.phone = phoneInput.value.trim();
-
-            let firstLetter = nameInput.value.trim()[0].toLowerCase();
-            addToTable(contact, firstLetter);
-        } else
-            showErrorBlock('Error');
-    });
-
-// Проверяем поле номера телефона 
+// function check phone input (num)
 function checkNumericInputValue(input, inputValue) {
-    // let regNumbers = /[0-9+]/gmi; - будущая регулярка для проверки номера телефона
-
     let errorText = '';
     let incorrectValue = false;
 
@@ -48,7 +26,7 @@ function checkNumericInputValue(input, inputValue) {
     return true;
 };
 
-// Проверяем текстовый инпут
+// function check text input (string)
 function checkTextInputValue(input, inputValue) {
     let errorText = "";
     let incorrectValue = false;
@@ -71,7 +49,7 @@ function checkTextInputValue(input, inputValue) {
     return true;
 }
 
-// Функция нужна для распределения полученных значений в инпутах и перераспределяет их по другим функциям
+// function for transit 2 ways: num and string 
 function checkInput(input) {
     let inputValue = input.value.trim().toLowerCase();
     let inputCorrectStatus;
@@ -84,7 +62,7 @@ function checkInput(input) {
     return inputCorrectStatus;
 }
 
-// Ошибки
+// Errors
 function showErrorInput(errText, obj) {
     obj.classList.toggle(obj.classList[0] + '_active');
     let tempPlaceHolder = obj.getAttribute('placeholder');
@@ -105,4 +83,27 @@ function showErrorBlock(errorText) {
         error.classList.toggle('error_active');
     }, 3000);
 }
-}
+
+
+// modal window
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modal = document.getElementById('modal');
+
+    function openModal() {
+        modal.style.display = 'block';
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    window.addEventListener('click', (event) => {
+        if(event.target === modal) {
+            closeModal();
+        }
+    })
+
+    openModalBtn.addEventListener('click', openModal);
+    closeModalBtn.addEventListener('click', closeModal);
+

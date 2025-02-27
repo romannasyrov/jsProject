@@ -18,7 +18,7 @@
             <input type="text" class="inputs__item inputs__phone js-phone-input" placeholder="Phone +X XXX XXX XX XX">
             <input type="submit" class="inputs__item inputs__submit js-submit-btn" value="ADD">
             <input type="submit" class="" value="Clear list">
-            <input type="submit" class="" value="Search">
+            <input type="submit" class="js-search-btn" id="openModalBtn" value="Search">
         </div>
         <div class="error-hint">
             <div class="error js-error">Error</div>
@@ -56,13 +56,13 @@
             </div>
         </div>        
         <div id="z1"></div>
-        <div class="search-popup popup">
+        <div class="search-popup" id="modal">
             <div class="search-popup__item search-popup__text js-search-popup">                
                 <h1 class="">Search contact</h1>
                 <input type="text" placeholder="Search..." class="search-popup__input js-search-input">
                 <div class="search-popup__output js-popup-output"></div>
                 <input type="submit" class="search-popup__show-all js-show-all-btn" value="Show all">
-                <i class="fa fa-window-close search-popup__close js-popup-close" aria-hidden="true"></i>
+                <span id="closeModalBtn">&times;</span>
             </div>
             <div class="search-popup__item search-popup__bg js-search-popup-bg"></div>
         </div>
