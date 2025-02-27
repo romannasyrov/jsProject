@@ -89,7 +89,6 @@ function showErrorBlock(errorText) {
     const openModalBtn = document.getElementById('openModalBtn');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const modal = document.getElementById('modal');
-
     function openModal() {
         modal.style.display = 'block';
     }
